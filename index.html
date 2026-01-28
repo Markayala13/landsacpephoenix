@@ -19,9 +19,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            green: '#1A3C34',  /* Verde Bosque Profundo */
-                            gold: '#B08D55',   /* Dorado Mate Elegante */
-                            cream: '#F7F7F5',  /* Fondo Blanco Hueso */
+                            green: '#1A3C34',  /* Deep Forest Green */
+                            gold: '#B08D55',   /* Elegant Matte Gold */
+                            cream: '#F7F7F5',  /* Off-White Background */
                             stone: '#E5E5E0',
                             text: '#2C2C2C'
                         }
@@ -38,10 +38,10 @@
     <style>
         body { background-color: #F7F7F5; color: #2C2C2C; }
         
-        /* Swiper Custom Pagination (Puntos dorados) */
+        /* Swiper Custom Pagination (Gold dots) */
         .swiper-pagination-bullet-active { background-color: #B08D55 !important; }
         
-        /* Lightbox Oculto por defecto */
+        /* Lightbox Hidden by default */
         #lightbox { display: none; }
         
         /* Scrollbar */
@@ -49,7 +49,7 @@
         ::-webkit-scrollbar-track { background: #F7F7F5; }
         ::-webkit-scrollbar-thumb { background: #B08D55; border-radius: 4px; }
 
-        /* Fallback para tarjetas si GSAP no carga */
+        /* Fallback for cards if GSAP doesn't load */
         .reveal-card {
             opacity: 1;
             transform: translateY(0);
@@ -115,7 +115,7 @@
             </button>
         </div>
 
-        <!-- Menú desplegable móvil -->
+        <!-- Mobile dropdown menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#1A3C34] border-t border-brand-gold/30 shadow-2xl">
             <div class="flex flex-col py-4">
                 <a href="#" class="mobile-link text-white hover:text-brand-gold hover:bg-white/10 px-6 py-4 font-title tracking-wide transition-colors">Home</a>
@@ -123,7 +123,7 @@
                 <a href="#services" class="mobile-link text-white hover:text-brand-gold hover:bg-white/10 px-6 py-4 font-title tracking-wide transition-colors">Services</a>
                 <a href="#gallery" class="mobile-link text-white hover:text-brand-gold hover:bg-white/10 px-6 py-4 font-title tracking-wide transition-colors">Gallery</a>
                 <a href="#contact" class="mobile-link text-white hover:text-brand-gold hover:bg-white/10 px-6 py-4 font-title tracking-wide transition-colors">Contact</a>
-                <a href="tel:+16024250887" class="mx-6 mt-4 text-center text-brand-gold font-bold border-2 border-brand-gold px-6 py-3 font-title hover:bg-brand-gold hover:text-brand-green transition-all">Call Now</a>
+                <a href="#contact" class="mx-6 mt-4 text-center text-brand-gold font-bold border-2 border-brand-gold px-6 py-3 font-title hover:bg-brand-gold hover:text-brand-green transition-all">Text Now</a>
             </div>
         </div>
     </nav>
@@ -142,7 +142,7 @@
                 We Transform <br> Your Space
             </h1>
             <p class="font-body text-gray-200 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10">
-                Premium landscaping, tree trimming, concrete work and maintenance services.
+                Premium landscaping, tree trimming, pavers, concrete work and maintenance services.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="#contact" class="bg-brand-gold text-brand-green px-10 py-4 font-title font-bold tracking-wider hover:bg-white transition-colors duration-300">
@@ -155,19 +155,19 @@
     <section id="about" class="py-20 px-6 bg-brand-cream border-b border-brand-stone">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="reveal-scroll">
-                <h2 class="font-title text-4xl text-brand-green mb-6">About Edgar Landscaping</h2>
+                <h2 class="font-title text-4xl text-brand-green mb-6">About Edgar Landscaping & Pavers</h2>
                 <div class="w-20 h-1 bg-brand-gold mb-6"></div>
                 <p class="font-body text-gray-600 mb-6 leading-relaxed">
-                    With over a decade of experience in Arizona's climate, we understand what your property needs to thrive under the sun. We don't just cut grass; we design ecosystems and build lasting structures.
+                    With over a decade of experience in Arizona's climate, we understand what your property needs to thrive under the sun. We don't just cut grass — we design outdoor spaces, install stunning pavers and build structures that last.
                 </p>
                 <p class="font-body text-gray-600 mb-8 leading-relaxed">
-                    Our commitment is punctuality, cleanliness, and a finish that increases your property's value.
+                    From custom paver patios and walkways to full landscape transformations, our commitment is punctuality, cleanliness, and a finish that increases your property's value.
                 </p>
                 
                 <div class="flex flex-wrap gap-6">
                     <div class="flex items-center gap-2 text-brand-green font-bold font-title text-sm border border-brand-green/20 px-4 py-2 rounded-full">
                         <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Licensed & Insured
+                        100% Recommended
                     </div>
                     <div class="flex items-center gap-2 text-brand-green font-bold font-title text-sm border border-brand-green/20 px-4 py-2 rounded-full">
                         <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -177,11 +177,45 @@
                         <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
                         Satisfaction Guaranteed
                     </div>
+                    <div class="flex items-center gap-2 text-brand-green font-bold font-title text-sm border border-brand-green/20 px-4 py-2 rounded-full">
+                        <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        Paver Experts
+                    </div>
                 </div>
             </div>
             <div class="relative reveal-scroll">
                 <div class="absolute -inset-4 border-2 border-brand-gold/30 z-0 translate-x-4 translate-y-4"></div>
-                <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=800&auto=format&fit=crop" class="relative z-10 shadow-xl w-full h-[400px] object-cover" alt="Edgar Landscaping">
+                <div class="relative z-10 shadow-xl">
+                    <div class="swiper aboutSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036536.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036537.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036538.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036539.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 4">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036540.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 5">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036541.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 6">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036542.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 7">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/pave/1000036543.jpg" class="w-full h-[400px] object-cover" alt="Paver Project 8">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -238,6 +272,11 @@
                     <h3 class="font-title text-2xl text-brand-green mb-4">Concrete Work</h3>
                     <p class="font-body text-gray-600">Patio construction, walkways, driveways and structural repairs.</p>
                 </div>
+                <div class="group bg-brand-cream p-10 border border-brand-stone hover:border-brand-gold transition-all duration-500 hover:shadow-xl reveal-card">
+                    <div class="text-brand-gold text-4xl mb-6">🧱</div>
+                    <h3 class="font-title text-2xl text-brand-green mb-4">Pavers Installation</h3>
+                    <p class="font-body text-gray-600">Custom paver design and installation for patios, walkways, driveways and pool decks. Durable, elegant and built to last.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -248,45 +287,45 @@
             <div class="swiper gallerySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0085.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 1">
+                        <img src="assets/img/IMG-20260125-WA0085.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 1">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0086.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 2">
+                        <img src="assets/img/IMG-20260125-WA0086.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 2">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0087.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 3">
+                        <img src="assets/img/IMG-20260125-WA0087.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 3">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0088.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 4">
+                        <img src="assets/img/IMG-20260125-WA0088.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 4">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0089.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 5">
+                        <img src="assets/img/IMG-20260125-WA0089.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 5">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0090.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 6">
+                        <img src="assets/img/IMG-20260125-WA0090.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 6">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0091.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 7">
+                        <img src="assets/img/IMG-20260125-WA0091.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 7">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0092.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 8">
+                        <img src="assets/img/IMG-20260125-WA0092.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 8">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0093.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 9">
+                        <img src="assets/img/IMG-20260125-WA0093.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 9">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0094 (1).jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 10">
+                        <img src="assets/img/IMG-20260125-WA0094 (1).jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 10">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0095.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 11">
+                        <img src="assets/img/IMG-20260125-WA0095.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 11">
                     </div>
                     <div class="swiper-slide cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="assets/img/IMG-20260125-WA0097.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Trabajo 12">
+                        <img src="assets/img/IMG-20260125-WA0097.jpg" class="w-full h-[400px] object-cover rounded-lg shadow-lg" alt="Project 12">
                     </div>
                 </div>
                 <div class="swiper-pagination mt-6"></div>
             </div>
-            <!-- Controles elegantes -->
+            <!-- Gallery controls -->
             <button class="gallery-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 w-12 h-12 md:w-14 md:h-14 bg-brand-green/90 hover:bg-brand-gold text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             </button>
@@ -325,7 +364,7 @@
                     </div>
                     <div class="swiper-pagination mt-6"></div>
                 </div>
-                <!-- Controles de video -->
+                <!-- Video controls -->
                 <button class="video-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-10 w-12 h-12 md:w-14 md:h-14 bg-brand-green/90 hover:bg-brand-gold text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
@@ -491,7 +530,7 @@
             heroVideo.playbackRate = 0.7;
         }
 
-        // --- 1. MENÚ MOBILE ---
+        // --- 1. MOBILE MENU ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -513,8 +552,8 @@
         });
 
         // --- 2. SWIPER SLIDERS ---
-        
-        // Proyectos
+
+        // Projects
         var swiperProjects = new Swiper(".mySwiper", {
             spaceBetween: 0,
             centeredSlides: true,
@@ -533,7 +572,7 @@
             loop: true
         });
 
-        // Testimonios
+        // Testimonials
         var swiperTestimonials = new Swiper(".testimonialSwiper", {
             pagination: {
                 el: ".swiper-pagination",
@@ -545,7 +584,22 @@
             loop: true
         });
 
-        // Galería
+        // About Pavers Carousel
+        var swiperAbout = new Swiper(".aboutSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: ".aboutSwiper .swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true
+        });
+
+        // Gallery
         var swiperGallery = new Swiper(".gallerySwiper", {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -572,7 +626,7 @@
             loop: true
         });
 
-        // Videos - Proyectos Destacados
+        // Videos - Featured Projects
         var swiperVideos = new Swiper(".videoSwiper", {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -597,7 +651,7 @@
             loop: true,
             on: {
                 slideChange: function() {
-                    // Pausar todos los videos al cambiar de slide
+                    // Pause all videos on slide change
                     document.querySelectorAll('.videoSwiper video').forEach(video => {
                         video.pause();
                     });
@@ -617,7 +671,7 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        // --- 4. ANIMACIONES GSAP ---
+        // --- 4. GSAP ANIMATIONS ---
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.from(".reveal-hero", {
@@ -648,7 +702,7 @@
             },
             {
                 scrollTrigger: {
-                    trigger: "#servicios",
+                    trigger: "#services",
                     start: "top 85%",
                     toggleActions: "play none none none"
                 },
