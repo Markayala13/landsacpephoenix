@@ -234,6 +234,8 @@
                 <span class="bg-white/10 px-4 py-1 rounded-full text-sm backdrop-blur-sm border border-white/20">Glendale</span>
                 <span class="bg-white/10 px-4 py-1 rounded-full text-sm backdrop-blur-sm border border-white/20">Peoria</span>
                 <span class="bg-white/10 px-4 py-1 rounded-full text-sm backdrop-blur-sm border border-white/20">Gilbert</span>
+                <span class="bg-white/10 px-4 py-1 rounded-full text-sm backdrop-blur-sm border border-white/20">Surprise</span>
+                <span class="bg-white/10 px-4 py-1 rounded-full text-sm backdrop-blur-sm border border-white/20">Sun City</span>
             </div>
         </div>
     </section>
@@ -342,22 +344,22 @@
                 <div class="swiper videoSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline>
+                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline muted>
                                 <source src="assets/video/VID-20260125-WA0096.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="swiper-slide">
-                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline>
+                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline muted>
                                 <source src="assets/video/VID-20260125-WA0100.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="swiper-slide">
-                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline>
+                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline muted>
                                 <source src="assets/video/VID-20260125-WA0101.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="swiper-slide">
-                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline>
+                            <video class="w-full h-[300px] md:h-[450px] lg:h-[500px] object-cover rounded-lg shadow-2xl" controls playsinline muted>
                                 <source src="assets/video/VID-20260125-WA0102.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -529,6 +531,18 @@
         if(heroVideo) {
             heroVideo.playbackRate = 0.7;
         }
+
+        // --- FORCE MUTE ALL VIDEOS (no audio allowed) ---
+        document.querySelectorAll('video').forEach(function(video) {
+            video.muted = true;
+            video.volume = 0;
+            video.addEventListener('volumechange', function() {
+                if (!this.muted) {
+                    this.muted = true;
+                    this.volume = 0;
+                }
+            });
+        });
 
         // --- 1. MOBILE MENU ---
         const menuBtn = document.getElementById('menu-btn');
