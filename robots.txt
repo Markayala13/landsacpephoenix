@@ -1,0 +1,8 @@
+# Robots.txt for edgarlandscapingandmoreservices.com
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://edgarlandscapingandmoreservices.com/sitemap.xml

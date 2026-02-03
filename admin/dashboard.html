@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | edgarlandscapingandmoreservices.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .sidebar-link:hover { background: rgba(16, 185, 129, 0.1); }
+        .sidebar-link.active { background: rgba(16, 185, 129, 0.2); border-left: 3px solid #10b981; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-800 border-r border-slate-700 fixed h-full">
+            <div class="p-6 border-b border-slate-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-sm">edgarlandscaping...</h1>
+                        <p class="text-xs text-slate-400">Control Panel</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="p-4 space-y-2">
+                <a href="#" onclick="showSection('dashboard')" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 transition" id="nav-dashboard">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    Dashboard
+                </a>
+                <a href="#" onclick="showSection('files')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 transition" id="nav-files">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                    File Manager
+                </a>
+                <a href="#" onclick="showSection('pages')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 transition" id="nav-pages">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Pages
+                </a>
+                <a href="#" onclick="showSection('media')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 transition" id="nav-media">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Media Library
+                </a>
+                <a href="#" onclick="showSection('settings')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 transition" id="nav-settings">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Settings
+                </a>
+
+                <div class="pt-4 mt-4 border-t border-slate-700">
+                    <a href="index.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 transition hover:bg-red-500/10">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        Logout
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 ml-64">
+            <!-- Top Bar -->
+            <header class="bg-slate-800/50 backdrop-blur border-b border-slate-700 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+                <div>
+                    <h2 class="text-xl font-semibold" id="page-title">Dashboard</h2>
+                    <p class="text-sm text-slate-400">Welcome back, Admin</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 hover:bg-slate-700 rounded-lg transition">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </button>
+                    <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center font-bold">
+                        A
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="p-8">
+                <!-- Welcome Message -->
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 mb-8">
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-2">Welcome to Admin Panel</h3>
+                    <p class="text-slate-400">Use the menu on the left to manage your website content.</p>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                    <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button onclick="showNotification('Feature coming soon!')" class="p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition text-center">
+                            <svg class="w-8 h-8 mx-auto mb-2 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                            <span class="text-sm">New Page</span>
+                        </button>
+                        <button onclick="showNotification('Feature coming soon!')" class="p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition text-center">
+                            <svg class="w-8 h-8 mx-auto mb-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                            <span class="text-sm">Upload Media</span>
+                        </button>
+                        <button onclick="showNotification('Feature coming soon!')" class="p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition text-center">
+                            <svg class="w-8 h-8 mx-auto mb-2 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            <span class="text-sm">Edit Content</span>
+                        </button>
+                        <button onclick="showNotification('Feature coming soon!')" class="p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl transition text-center">
+                            <svg class="w-8 h-8 mx-auto mb-2 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            <span class="text-sm">View Analytics</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Manager Section -->
+            <section id="section-files" class="p-8 hidden">
+                <div class="bg-slate-800 rounded-2xl border border-slate-700">
+                    <!-- File Manager Header -->
+                    <div class="p-4 border-b border-slate-700 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <button onclick="showNotification('Feature coming soon!')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                Upload Files
+                            </button>
+                            <button onclick="showNotification('Feature coming soon!')" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-medium transition">
+                                New Folder
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-400">
+                            <span>Path:</span>
+                            <span class="text-white">/public_html/</span>
+                        </div>
+                    </div>
+
+                    <!-- File List -->
+                    <div class="divide-y divide-slate-700">
+                        <!-- Folder -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">assets</p>
+                                    <p class="text-sm text-slate-400">Folder - 24 items</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 15, 2024</span>
+                        </div>
+
+                        <!-- HTML File -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">index.html</p>
+                                    <p class="text-sm text-slate-400">HTML - 45 KB</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 20, 2024</span>
+                        </div>
+
+                        <!-- CSS File -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">styles.css</p>
+                                    <p class="text-sm text-slate-400">CSS - 12 KB</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 18, 2024</span>
+                        </div>
+
+                        <!-- JS File -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">scripts.js</p>
+                                    <p class="text-sm text-slate-400">JavaScript - 8 KB</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 19, 2024</span>
+                        </div>
+
+                        <!-- Images Folder -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">images</p>
+                                    <p class="text-sm text-slate-400">Folder - 156 items</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 21, 2024</span>
+                        </div>
+
+                        <!-- Video Folder -->
+                        <div class="p-4 hover:bg-slate-700/50 transition cursor-pointer flex items-center justify-between" onclick="showNotification('Access restricted')">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">videos</p>
+                                    <p class="text-sm text-slate-400">Folder - 8 items</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-400 text-sm">Jan 22, 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Storage Info -->
+                    <div class="p-4 border-t border-slate-700 bg-slate-800/50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm text-slate-400">Storage Used</span>
+                            <span class="text-sm font-medium">2.4 GB / 10 GB</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 24%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pages Section -->
+            <section id="section-pages" class="p-8 hidden">
+                <div class="bg-slate-800 rounded-2xl border border-slate-700">
+                    <div class="p-4 border-b border-slate-700 flex items-center justify-between">
+                        <h3 class="font-semibold">Website Pages</h3>
+                        <button onclick="showNotification('Feature coming soon!')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-medium transition">
+                            + Add New Page
+                        </button>
+                    </div>
+                    <div class="divide-y divide-slate-700">
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-medium">Home</p>
+                                <p class="text-sm text-slate-400">/index.html</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Published</span>
+                                <button onclick="showNotification('Feature coming soon!')" class="p-2 hover:bg-slate-700 rounded-lg"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-medium">About Us</p>
+                                <p class="text-sm text-slate-400">#about</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Published</span>
+                                <button onclick="showNotification('Feature coming soon!')" class="p-2 hover:bg-slate-700 rounded-lg"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-medium">Services</p>
+                                <p class="text-sm text-slate-400">#services</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Published</span>
+                                <button onclick="showNotification('Feature coming soon!')" class="p-2 hover:bg-slate-700 rounded-lg"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-medium">Gallery</p>
+                                <p class="text-sm text-slate-400">#gallery</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Published</span>
+                                <button onclick="showNotification('Feature coming soon!')" class="p-2 hover:bg-slate-700 rounded-lg"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex items-center justify-between">
+                            <div>
+                                <p class="font-medium">Contact</p>
+                                <p class="text-sm text-slate-400">#contact</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Published</span>
+                                <button onclick="showNotification('Feature coming soon!')" class="p-2 hover:bg-slate-700 rounded-lg"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Section -->
+            <section id="section-media" class="p-8 hidden">
+                <div class="bg-slate-800 rounded-2xl border border-slate-700 p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-semibold">Media Library</h3>
+                        <button onclick="showNotification('Feature coming soon!')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-medium transition">
+                            Upload New
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="aspect-square bg-slate-700 rounded-xl overflow-hidden cursor-pointer hover:ring-2 hover:ring-emerald-500 transition" onclick="showNotification('View only mode')">
+                            <div class="w-full h-full flex items-center justify-center text-slate-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="section-settings" class="p-8 hidden">
+                <div class="bg-slate-800 rounded-2xl border border-slate-700 p-6">
+                    <h3 class="font-semibold mb-6">Site Settings</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Site Title</label>
+                            <input type="text" value="edgarlandscapingandmoreservices.com" class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Business Phone</label>
+                            <input type="text" value="(602) 425-0877" class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" readonly>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Business Hours</label>
+                            <input type="text" value="Mon - Sat: 7am - 5pm" class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" readonly>
+                        </div>
+                        <button onclick="showNotification('Changes saved! (Demo mode)')" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl font-medium transition">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="fixed bottom-6 right-6 bg-slate-700 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 z-50">
+        <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        <span id="notification-text">Message</span>
+    </div>
+
+    <script>
+        // Check login
+        if (sessionStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('[id^="section-"]').forEach(el => el.classList.add('hidden'));
+            // Show selected section
+            document.getElementById('section-' + section).classList.remove('hidden');
+
+            // Update nav
+            document.querySelectorAll('.sidebar-link').forEach(el => el.classList.remove('active'));
+            document.getElementById('nav-' + section).classList.add('active');
+
+            // Update title
+            const titles = {
+                'dashboard': 'Dashboard',
+                'files': 'File Manager',
+                'pages': 'Pages',
+                'media': 'Media Library',
+                'settings': 'Settings'
+            };
+            document.getElementById('page-title').textContent = titles[section];
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            document.getElementById('notification-text').textContent = message;
+            notification.classList.remove('translate-y-20', 'opacity-0');
+
+            setTimeout(() => {
+                notification.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
